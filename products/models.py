@@ -8,30 +8,21 @@ NULLABLE = {"blank": True, "null": True}
 class Product(models.Model):
     """Модель продукта"""
 
-    name = (
-        models.CharField(
+    name = models.CharField(
             max_length=100,
             verbose_name="Наименование",
-            help_text="Введите наименование",
-        ),
-    )
+            help_text="Введите наименование",)
 
-    version = (
-        models.CharField(
+    version = models.CharField(
             max_length=100,
             verbose_name="Укажите модель",
             **NULLABLE,
-            help_text="Укажите модель",
-        ),
-    )
+            help_text="Укажите модель",)
 
-    release_date = (
-        models.DateField(
+    release_date = models.DateField(
             verbose_name="дата релиза продукта",
             **NULLABLE,
-            help_text="Укажите дату релиза",
-        ),
-    )
+            help_text="Укажите дату релиза",)
 
     supplier = models.ForeignKey(
         Supplier,
